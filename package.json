@@ -4,7 +4,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start"
+    "start": "react-native start",
+    "prebuild": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build": "cd android && gradlew assembleDebug && cd ../",
+    "clear": "cd android && gradlew clean && cd ../"
   },
   "dependencies": {
     "@ant-design/icons-react-native": "^2.3.1",
